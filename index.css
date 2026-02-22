@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Outfit', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-dark-navy text-cool-gray antialiased;
+    /* Rich gradient background */
+    background: radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 100%);
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight text-white;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-cyan to-ice-cyan;
+  }
+
+  .glass-panel {
+    @apply bg-slate-900/50 backdrop-blur-xl border border-white/10 shadow-xl;
+  }
+}
