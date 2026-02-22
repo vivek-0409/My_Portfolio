@@ -156,7 +156,7 @@ export const platforms: Platform[] = [
 export const socialLinks: SocialLink[] = [
   {
     name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/parekh-vivekkumar-gp-kheda-it-dte-03b3572b6/',
+    url: 'https://www.linkedin.com/in/vivek-parekh-%F0%9F%9A%80%F0%9F%98%8E-03b3572b6',
     // Now that LinkedinIcon is exported, we can use it here directly as well,
     // although it's already used in ContactPreferences.tsx.
     icon: <LinkedinIcon />,

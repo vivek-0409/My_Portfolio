@@ -13,19 +13,71 @@ const SocialLink: React.FC<SocialLinkProps> = ({ link, delay }) => {
       href={link.url}
       target="_blank"
       rel="noopener noreferrer"
-      initial={{ opacity: 0, scale: 0.5 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ delay, duration: 0.4, type: "spring" }}
-      whileHover={{ y: -5, scale: 1.1 }}
-      className="flex flex-col items-center p-6 bg-slate-800/50 rounded-xl border border-white/5 backdrop-blur-sm group cursor-pointer min-w-[140px]"
+      initial={{ opacity: 0, scale: 0.5, y: 20 }}
+      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{
+        delay,
+        duration: 0.5,
+        type: 'spring',
+        stiffness: 120,
+      }}
+      whileHover={{
+        y: -12,
+        scale: 1.12,
+        boxShadow: '0 20px 40px rgba(34, 211, 238, 0.4)',
+      }}
+      className="relative group rounded-xl overflow-hidden cursor-pointer min-w-[140px] h-[180px] md:h-[200px]"
     >
-      <div className="text-neon-cyan text-4xl mb-3 group-hover:text-ice-cyan transition-colors duration-300 drop-shadow-lg">
-        {link.icon}
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-800/60 via-slate-900/50 to-dark-navy/60 backdrop-blur-xl border border-white/10" />
+
+      {/* Animated hover glow */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-br from-neon-cyan/20 to-accent-blue/10 opacity-0 group-hover:opacity-100"
+        initial={{ opacity: 0 }}
+      />
+
+      {/* Rotating background element */}
+      <motion.div
+        animate={{ rotate: -360 }}
+        transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+        className="absolute -bottom-20 -right-20 w-40 h-40 bg-neon-cyan/10 blur-2xl pointer-events-none"
+      />
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full p-6 text-center">
+        {/* Icon */}
+        <motion.div
+          className="text-4xl md:text-5xl mb-3 group-hover:text-ice-cyan transition-colors duration-300"
+          whileHover={{ rotate: 360, scale: 1.2 }}
+          transition={{ duration: 0.8, type: 'spring' }}
+          animate={{
+            y: [0, -5, 0],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+        >
+          {link.icon}
+        </motion.div>
+
+        {/* Name */}
+        <motion.span
+          className="text-base md:text-lg font-bold text-white group-hover:text-neon-cyan transition-colors duration-300"
+          whileHover={{ scale: 1.05 }}
+        >
+          {link.name}
+        </motion.span>
+
+        {/* Animated border glow */}
+        <motion.div
+          className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 border-2 border-transparent bg-gradient-to-r from-neon-cyan via-transparent to-ice-cyan pointer-events-none"
+          initial={{ opacity: 0 }}
+        />
       </div>
-      <span className="text-base font-medium text-white group-hover:text-neon-cyan transition-colors duration-300">
-        {link.name}
-      </span>
     </motion.a>
   );
 };

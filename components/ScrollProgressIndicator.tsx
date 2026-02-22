@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 const ScrollProgressIndicator: React.FC = () => {
   const [scrollWidth, setScrollWidth] = useState(0);
@@ -15,11 +16,12 @@ const ScrollProgressIndicator: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-1 bg-cool-gray/20 z-[9999]">
-      <div
-        className="h-full bg-neon-cyan transition-all duration-100 ease-out"
+    <div className="fixed top-0 left-0 w-full h-1.5 bg-gradient-to-r from-slate-800 to-slate-900 z-[9999] shadow-lg">
+      <motion.div
+        className="h-full bg-gradient-to-r from-neon-cyan via-ice-cyan to-accent-blue shadow-lg shadow-neon-cyan/50"
         style={{ width: `${scrollWidth}%` }}
-      ></div>
+        transition={{ duration: 0.1, ease: 'easeOut' }}
+      />
     </div>
   );
 };
