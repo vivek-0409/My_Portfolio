@@ -2,7 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const About: React.FC = () => {
-  const paragraphs: string[] = [];
+  const paragraphs: string[] = [
+    "🐍 Python-driven developer crafting intelligent automation & scalable systems that transform complex problems into elegant solutions.",
+    "💻 Active open-source contributor leveraging cutting-edge AI to build practical, innovative applications.",
+    "🤝 Passionate about collaboration, continuous learning, and turning visionary ideas into impactful technology."
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -39,57 +43,21 @@ const About: React.FC = () => {
         <motion.p
           key={index}
           variants={itemVariants}
-          className="text-base sm:text-lg md:text-xl text-slate-300 mb-6 md:mb-8 leading-relaxed relative"
+          className="text-lg sm:text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed relative"
         >
-          {/* Highlight specific keywords */}
-          {paragraph.replace(
-            /AI|Automation|Python|GitHub|hands-on|practical|solutions|intelligent|real-world/g,
-            (match) => {
-              const highlighted = [
-                'AI',
-                'Automation',
-                'Python',
-                'GitHub',
-                'hands-on',
-                'practical',
-                'solutions',
-                'intelligent',
-                'real-world',
-              ].includes(match);
-              return highlighted ? `<span class="text-neon-cyan font-semibold">${match}</span>` : match;
-            }
-          ).split(/<span|<\/span>/g).map((part, i) =>
-            part.includes('class') ? (
-              <span
-                key={i}
-                className="text-neon-cyan font-semibold"
-                dangerouslySetInnerHTML={{
-                  __html: part.replace(/class="[^"]*"/, ''),
-                }}
-              />
-            ) : (
-              part
-            )
-          )}
-          {/* Create inline spans for highlighted words */}
-          {paragraph.split(/(\bAI\b|\bAutomation\b|\bPython\b|\bGitHub\b|\bhands-on\b|\bpractical\b|\bsolutions\b|\bintelligent\b|\breal-world\b)/g).map(
+          {paragraph.split(/(\bAI\b|\bAutomation\b|\bPython\b|\bGitHub\b|\bhands-on\b|\bpractical\b|\bsolutions\b|\bintelligent\b|\breal-world\b)/gi).map(
             (part, i) => {
-              const isHighlighted = [
-                'AI',
-                'Automation',
-                'Python',
-                'GitHub',
-                'hands-on',
-                'practical',
-                'solutions',
-                'intelligent',
-                'real-world',
-              ].includes(part);
+              const isHighlighted = /AI|Automation|Python|GitHub|hands-on|practical|solutions|intelligent|real-world/i.test(part);
               return isHighlighted ? (
                 <motion.span
                   key={i}
-                  className="text-neon-cyan font-semibold bg-neon-cyan/10 px-1.5 rounded-md"
-                  whileHover={{ scale: 1.05, backgroundColor: 'rgba(34, 211, 238, 0.2)' }}
+                  className="text-neon-cyan font-bold bg-neon-cyan/5 px-2 py-0.5 rounded-md border border-neon-cyan/10"
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: 'rgba(34, 211, 238, 0.15)',
+                    borderColor: 'rgba(34, 211, 238, 0.3)',
+                    boxShadow: '0 0 15px rgba(34, 211, 238, 0.2)'
+                  }}
                 >
                   {part}
                 </motion.span>
