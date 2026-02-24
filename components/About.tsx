@@ -2,9 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const About: React.FC = () => {
-  const paragraphs = [
-    "🐍 Python-driven developer crafting intelligent automation & scalable systems that transform complex problems into elegant solutions. 💻 Active open-source contributor leveraging cutting-edge AI to build practical, innovative applications. 🤝 Passionate about collaboration, continuous learning, and turning visionary ideas into impactful technology."
-  ];
+  const paragraphs: string[] = [];
 
   const containerVariants = {
     hidden: { opacity: 0 },
