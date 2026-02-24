@@ -51,14 +51,17 @@ const SocialLink: React.FC<SocialLinkProps> = ({ link, delay }) => {
         <motion.div
           className="text-4xl md:text-5xl mb-3 group-hover:text-ice-cyan transition-colors duration-300"
           whileHover={{ rotate: 360, scale: 1.2 }}
-          transition={{ duration: 0.8, type: 'spring' }}
           animate={{
             y: [0, -5, 0],
           }}
           transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: 'easeInOut',
+            y: {
+              duration: 3,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            },
+            rotate: { duration: 0.8, type: 'spring' },
+            scale: { duration: 0.8, type: 'spring' },
           }}
         >
           {link.icon}

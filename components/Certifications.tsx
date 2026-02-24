@@ -28,11 +28,10 @@ const Certifications: React.FC<CertificationsProps> = ({ certification, delay, c
         scale: 1.04,
         boxShadow: '0 20px 40px rgba(34, 211, 238, 0.3)',
       }}
-      className={`relative rounded-2xl p-6 md:p-8 text-center overflow-hidden group cursor-pointer transition-all duration-300 ${
-        certification.featured
+      className={`relative rounded-2xl p-6 md:p-8 text-center overflow-hidden group cursor-pointer transition-all duration-300 ${certification.featured
           ? 'bg-gradient-to-br from-slate-700/60 via-slate-800/50 to-dark-navy/60 border border-neon-cyan/40 shadow-lg shadow-neon-cyan/30'
           : 'bg-gradient-to-br from-slate-800/60 via-slate-900/50 to-dark-navy/60 border border-white/10 hover:border-neon-cyan/30'
-      } ${className}`}
+        } ${className}`}
     >
       {/* Background elements */}
       <motion.div
@@ -50,18 +49,20 @@ const Certifications: React.FC<CertificationsProps> = ({ certification, delay, c
         {/* Icon */}
         {certification.icon && (
           <motion.div
-            className={`text-neon-cyan mb-4 mx-auto ${
-              certification.featured ? 'text-6xl md:text-7xl' : 'text-5xl md:text-6xl'
-            }`}
+            className={`text-neon-cyan mb-4 mx-auto ${certification.featured ? 'text-6xl md:text-7xl' : 'text-5xl md:text-6xl'
+              }`}
             whileHover={{ rotate: 360, scale: 1.15, y: -5 }}
-            transition={{ duration: 0.8, type: 'spring' }}
             animate={{
               y: [0, -8, 0],
             }}
             transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: 'easeInOut',
+              y: {
+                duration: 3,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              },
+              rotate: { duration: 0.8, type: 'spring' },
+              scale: { duration: 0.8, type: 'spring' },
             }}
           >
             {certification.icon}
@@ -70,9 +71,8 @@ const Certifications: React.FC<CertificationsProps> = ({ certification, delay, c
 
         {/* Name */}
         <motion.h4
-          className={`font-bold text-white mb-2 group-hover:text-neon-cyan transition-colors duration-300 ${
-            certification.featured ? 'text-xl md:text-3xl' : 'text-lg md:text-2xl'
-          }`}
+          className={`font-bold text-white mb-2 group-hover:text-neon-cyan transition-colors duration-300 ${certification.featured ? 'text-xl md:text-3xl' : 'text-lg md:text-2xl'
+            }`}
           whileHover={{ scale: 1.05 }}
         >
           {certification.name}

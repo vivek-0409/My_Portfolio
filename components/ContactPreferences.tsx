@@ -73,14 +73,17 @@ const ContactPreferences: React.FC = () => {
       <motion.div
         className="text-neon-cyan text-5xl md:text-6xl mb-4 md:mb-6 relative z-10 p-3 md:p-4 bg-gradient-to-br from-neon-cyan/20 to-transparent rounded-full border border-neon-cyan/30 group-hover:border-neon-cyan/60 transition-all duration-300"
         whileHover={{ rotate: 360, scale: 1.2, y: -8 }}
-        transition={{ duration: 0.8, type: 'spring' }}
         animate={{
           y: [0, -6, 0],
         }}
         transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: 'easeInOut',
+          y: {
+            duration: 3,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          },
+          rotate: { duration: 0.8, type: 'spring' },
+          scale: { duration: 0.8, type: 'spring' },
         }}
       >
         {icon}

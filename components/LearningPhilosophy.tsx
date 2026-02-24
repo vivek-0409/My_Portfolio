@@ -8,41 +8,46 @@ const LearningPhilosophy: React.FC = () => {
     "My goal is always to improve accuracy and impact, not just speed. I'm driven by a continuous improvement mindset, always seeking feedback and new challenges to evolve my skills as an AI and Automation Developer."
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
+  const card1Variants = {
+    hidden: { opacity: 0, x: -80, filter: 'blur(10px)' },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
+      x: 0,
+      filter: 'blur(0px)',
+      transition: { duration: 1, type: 'spring', stiffness: 100, damping: 20 }
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+  const card2Variants = {
+    hidden: { opacity: 0, y: 100, scale: 0.9, rotateX: 15 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-        type: 'spring',
-        stiffness: 100,
-      },
+      scale: 1,
+      rotateX: 0,
+      transition: { duration: 1.2, type: 'spring', stiffness: 80, damping: 15 }
+    },
+  };
+
+  const card3Variants = {
+    hidden: { opacity: 0, x: 80, filter: 'blur(10px)' },
+    visible: {
+      opacity: 1,
+      x: 0,
+      filter: 'blur(0px)',
+      transition: { duration: 1, type: 'spring', stiffness: 100, damping: 20 }
     },
   };
 
   return (
-    <motion.div
-      className="max-w-4xl mx-auto space-y-6 md:space-y-8"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-    >
+    <div className="max-w-4xl mx-auto space-y-6 md:space-y-8 perspective-1000">
       {philosophyPoints.map((point, index) => (
         <motion.div
           key={index}
-          variants={itemVariants}
+          variants={index === 0 ? card1Variants : index === 1 ? card2Variants : card3Variants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
           className="relative rounded-2xl p-6 md:p-8 overflow-hidden bg-gradient-to-br from-slate-800/60 via-slate-900/50 to-dark-navy/60 backdrop-blur-xl border border-white/10 group hover:border-neon-cyan/40 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-neon-cyan/20"
         >
           {/* Background elements */}
@@ -111,7 +116,7 @@ const LearningPhilosophy: React.FC = () => {
           />
         </motion.div>
       ))}
-    </motion.div>
+    </div>
   );
 };
 
