@@ -5,9 +5,10 @@ interface SectionProps {
   id: string;
   title: string;
   children: React.ReactNode;
+  background?: React.ReactNode;
 }
 
-const Section: React.FC<SectionProps> = ({ id, title, children }) => {
+const Section: React.FC<SectionProps> = ({ id, title, children, background }) => {
   return (
     <motion.section
       id={id}
@@ -28,6 +29,8 @@ const Section: React.FC<SectionProps> = ({ id, title, children }) => {
         animate={{ y: [0, -30, 0] }}
         transition={{ duration: 5, repeat: Infinity }}
       />
+
+      {background && background}
 
       <div className="text-center mb-12 md:mb-16 lg:mb-20">
         <motion.div

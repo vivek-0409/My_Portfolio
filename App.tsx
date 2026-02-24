@@ -15,6 +15,7 @@ import Certifications from './components/Certifications';
 import CurrentlyLearning from './components/CurrentlyLearning';
 import ContactPreferences from './components/ContactPreferences';
 import ScrollProgressIndicator from './components/ScrollProgressIndicator';
+import SkillsBackground from './components/SkillsBackground';
 
 import { skills, projects, platforms, socialLinks, experienceTimeline, certifications, currentlyLearningItems } from './constants';
 import { Project, Skill, Platform, SocialLink as SocialLinkType, ExperienceItem, CertificationItem, LearningItem } from './types';
@@ -50,7 +51,7 @@ const App: React.FC = () => {
             </Section>
 
             {/* Skills and Expertise section */}
-            <Section id="skills" title="My Skills & Expertise">
+            <Section id="skills" title="My Skills & Expertise" background={<SkillsBackground />}>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
                 {skills.map((skill: Skill, index: number) => (
                   <SkillCard key={index} skill={skill} delay={index * 0.1} />
