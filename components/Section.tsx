@@ -36,9 +36,9 @@ const Section: React.FC<SectionProps> = ({ id, title, children }) => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 inline-block relative">
+          <h3 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white mb-6 inline-block relative tracking-tighter">
             {title}
-            
+
             {/* Animated underline */}
             <motion.div
               initial={{ scaleX: 0 }}

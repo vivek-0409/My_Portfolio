@@ -37,8 +37,8 @@ const App: React.FC = () => {
         <Hero />
 
         {/* Content sections with flexible container */}
-        <div className="w-full px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+        <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20">
+          <div className="max-w-[90rem] mx-auto">
             {/* About Me section */}
             <Section id="about" title="About Me">
               <About />

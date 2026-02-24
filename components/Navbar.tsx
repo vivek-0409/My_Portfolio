@@ -92,11 +92,11 @@ const Navbar: React.FC = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden mt-4 bg-slate-900/50 rounded-xl border border-white/10 p-4"
+            initial={{ opacity: 0, scale: 0.95, y: -20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: -20 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+            className="lg:hidden absolute top-full left-4 right-4 mt-4 bg-slate-900/90 backdrop-blur-2xl rounded-2xl border border-white/10 p-6 shadow-2xl z-50 overflow-hidden"
           >
             <ul className="space-y-2">
               {navItems.map((item, index) => (
@@ -110,7 +110,7 @@ const Navbar: React.FC = () => {
                     onClick={() => scrollToSection(item.id)}
                     whileHover={{ x: 5 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-full text-left text-cool-gray hover:text-neon-cyan transition-colors duration-300 px-4 py-2.5 rounded-lg hover:bg-white/5 font-medium text-sm"
+                    className="w-full text-left text-cool-gray hover:text-neon-cyan transition-colors duration-300 px-6 py-4 rounded-xl hover:bg-white/5 font-semibold text-base sm:text-lg"
                   >
                     {item.name}
                   </motion.button>

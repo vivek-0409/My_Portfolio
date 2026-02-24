@@ -11,12 +11,15 @@
   }
 
   body {
-    @apply bg-dark-navy text-cool-gray antialiased;
+    @apply bg-dark-navy text-cool-gray antialiased selection:bg-neon-cyan/30 selection:text-white;
     /* Rich animated gradient background */
     background: linear-gradient(-45deg, #0f172a, #1e293b, #0f172a, #1a1f35);
     background-size: 400% 400%;
     min-height: 100vh;
     animation: gradientShift 15s ease infinite;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 
   h1,
@@ -25,7 +28,12 @@
   h4,
   h5,
   h6 {
-    @apply font-bold tracking-tight text-white;
+    @apply font-bold tracking-tight text-white leading-tight;
+  }
+
+  /* Improved focus styles for better accessibility on all devices */
+  :focus-visible {
+    @apply outline-none ring-2 ring-neon-cyan ring-offset-2 ring-offset-dark-navy;
   }
 }
 
@@ -33,27 +41,35 @@
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-20px);
   }
 }
 
 @keyframes glow-pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
   }
+
   50% {
     box-shadow: 0 0 40px rgba(34, 211, 238, 0.6);
   }
@@ -63,6 +79,7 @@
   0% {
     background-position: -1000px 0;
   }
+
   100% {
     background-position: 1000px 0;
   }
@@ -72,6 +89,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -82,6 +100,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -89,9 +108,12 @@
 }
 
 @keyframes bounce-gentle {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -101,19 +123,24 @@
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
 
 @keyframes floating-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) scale(1);
     opacity: 0.4;
   }
+
   50% {
     transform: translateY(-20px) scale(1.1);
     opacity: 0.6;
@@ -121,9 +148,12 @@
 }
 
 @keyframes pulse-light {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 40px rgba(59, 130, 246, 0.3), 0 0 80px rgba(34, 211, 238, 0.15);
   }
+
   50% {
     box-shadow: 0 0 60px rgba(59, 130, 246, 0.5), 0 0 120px rgba(34, 211, 238, 0.25);
   }
@@ -133,6 +163,7 @@
   0% {
     background-position: -1000px 0;
   }
+
   100% {
     background-position: 1000px 0;
   }
@@ -184,14 +215,12 @@
     inset: -20px;
     z-index: 0;
     border-radius: 2rem;
-    background: linear-gradient(
-      135deg,
-      rgba(59, 130, 246, 0.15) 0%,
-      rgba(34, 211, 238, 0.1) 25%,
-      rgba(59, 130, 246, 0.12) 50%,
-      rgba(34, 211, 238, 0.1) 75%,
-      rgba(59, 130, 246, 0.15) 100%
-    );
+    background: linear-gradient(135deg,
+        rgba(59, 130, 246, 0.15) 0%,
+        rgba(34, 211, 238, 0.1) 25%,
+        rgba(59, 130, 246, 0.12) 50%,
+        rgba(34, 211, 238, 0.1) 75%,
+        rgba(59, 130, 246, 0.15) 100%);
     background-size: 400% 400%;
     animation: blue-gradient-wave 8s ease infinite;
     filter: blur(1px);
@@ -201,11 +230,9 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(
-      circle at 20% 50%,
-      rgba(59, 130, 246, 0.2) 0%,
-      transparent 50%
-    );
+    background: radial-gradient(circle at 20% 50%,
+        rgba(59, 130, 246, 0.2) 0%,
+        transparent 50%);
     animation: floating-glow 6s ease-in-out infinite;
   }
 
@@ -213,11 +240,9 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(
-      circle at 80% 50%,
-      rgba(34, 211, 238, 0.15) 0%,
-      transparent 50%
-    );
+    background: radial-gradient(circle at 80% 50%,
+        rgba(34, 211, 238, 0.15) 0%,
+        transparent 50%);
     animation: floating-glow 8s ease-in-out infinite reverse;
   }
 

@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
     "Intelligent Systems Creator",
     "Future AI Innovator",
 
-    
+
   ];
 
   // Typing animation states
@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
         }, 70);
       }
     }
-    
+
 
     return () => clearTimeout(timeout);
   }, [displayText, titleIndex, isDeleting, isWaiting, portfolioTitles]);
@@ -115,18 +115,18 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="flex flex-col items-center justify-center min-h-[calc(100vh-6rem)] text-center py-8 md:py-16 relative overflow-hidden px-4">
+    <section id="hero" className="flex flex-col items-center justify-center min-h-[calc(100vh-6rem)] text-center py-10 md:py-20 lg:py-24 relative overflow-hidden px-4 sm:px-6">
       {/* Animated background elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <motion.div 
+        <motion.div
           animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 8, repeat: Infinity }}
-          className="absolute top-20 left-20 w-72 h-72 bg-neon-cyan/10 rounded-full blur-3xl"
+          className="absolute top-10 left-10 w-48 h-48 sm:w-72 sm:h-72 bg-neon-cyan/10 rounded-full blur-3xl"
         />
-        <motion.div 
+        <motion.div
           animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.4, 0.2] }}
           transition={{ duration: 10, repeat: Infinity }}
-          className="absolute bottom-20 right-20 w-96 h-96 bg-accent-blue/10 rounded-full blur-3xl"
+          className="absolute bottom-10 right-10 w-64 h-64 sm:w-96 sm:h-96 bg-accent-blue/10 rounded-full blur-3xl"
         />
       </div>
 
@@ -134,17 +134,17 @@ const Hero: React.FC = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="z-10 max-w-5xl"
+        className="z-10 w-full max-w-6xl mx-auto"
       >
         {/* Header with animated blue background */}
-        <div className="hero-bg-wrapper relative">
+        <div className="hero-bg-wrapper relative w-full">
           <div className="hero-animated-bg"></div>
-          <motion.div 
+          <motion.div
             variants={itemVariants}
-            className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 mb-8 md:mb-12 hero-content-wrapper px-8 py-6 md:px-12 md:py-8"
+            className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16 mb-12 md:mb-16 lg:mb-20 hero-content-wrapper px-6 py-10 md:px-12 md:py-16"
           >
             {/* Profile Image with Professional Blue Animation Background */}
-            <motion.div 
+            <motion.div
               variants={profileImageVariants}
               className="flex-shrink-0 relative profile-animation-wrapper"
             >
@@ -347,7 +347,7 @@ const Hero: React.FC = () => {
                 }}
                 transition={{ duration: 0.3 }}
               />
-              
+
               {/* Decorative border animation */}
               <motion.div
                 className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-r from-ice-cyan via-neon-cyan to-accent-blue bg-clip-border p-1 opacity-0"
@@ -358,21 +358,21 @@ const Hero: React.FC = () => {
             </motion.div>
 
             {/* Main greeting with animated name */}
-            <motion.div 
+            <motion.div
               variants={textVariants}
-              className="text-center md:text-left flex-1"
+              className="text-center lg:text-left flex-1"
             >
-              <motion.h2 
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
-                className="font-extrabold text-white mb-3 md:mb-4 tracking-tight leading-tight"
+                className="font-extrabold text-white mb-4 md:mb-6 tracking-tight leading-tight"
               >
-                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-slate-300 mb-2">
+                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-slate-300 mb-2 font-medium">
                   Hello, I'm
                 </div>
-                <motion.span 
-                  className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gradient drop-shadow-lg"
+                <motion.span
+                  className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-gradient drop-shadow-2xl py-2"
                   animate={{ backgroundPosition: ['0%', '100%', '0%'] }}
                   transition={{ duration: 3, repeat: Infinity }}
                 >
@@ -381,18 +381,18 @@ const Hero: React.FC = () => {
               </motion.h2>
 
               {/* Professional title with background - Dynamic Rotating */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
-                className="inline-block mb-4 md:mb-6 relative group"
+                className="inline-block mb-8 lg:mb-10 relative group w-full lg:w-auto"
               >
                 <motion.div
                   className="absolute -inset-2 bg-gradient-to-r from-ice-cyan via-neon-cyan to-accent-blue rounded-lg blur opacity-0 group-hover:opacity-20 transition duration-300"
                 />
-                
+
                 {/* Typing Animation Container */}
-                <div className="relative px-4 py-3 md:px-6 md:py-4 min-h-12 sm:min-h-16 md:min-h-20 flex items-center justify-center">
+                <div className="relative px-6 py-4 md:px-8 md:py-6 min-h-[5rem] sm:min-h-[6rem] flex items-center justify-center lg:justify-start">
                   <style>{`
                     @keyframes blink {
                       0%, 50% { opacity: 1; }
@@ -405,8 +405,8 @@ const Hero: React.FC = () => {
                       font-weight: bold;
                     }
                   `}</style>
-                  
-                  <p className="text-lg sm:text-2xl md:text-3xl lg:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-ice-cyan via-blue-400 to-neon-cyan font-bold min-h-10 sm:min-h-14 md:min-h-16 lg:min-h-20 flex items-center justify-center text-center break-words">
+
+                  <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-ice-cyan via-blue-400 to-neon-cyan font-bold flex items-center break-words text-center lg:text-left">
                     {displayText}
                     <span className="typing-cursor text-neon-cyan">|</span>
                   </p>
@@ -417,7 +417,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Professional bio - short and concise */}
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
@@ -426,15 +426,15 @@ const Hero: React.FC = () => {
         </motion.p>
 
         {/* Call-to-action buttons */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.8 }}
           className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 flex-wrap"
         >
           <motion.button
-            whileHover={{ 
-              scale: 1.1, 
+            whileHover={{
+              scale: 1.1,
               boxShadow: "0 0 40px rgba(34, 211, 238, 0.8)",
               y: -5
             }}
@@ -449,10 +449,10 @@ const Hero: React.FC = () => {
             />
             <span className="relative flex items-center justify-center gap-2">
               View My Work
-              <motion.svg 
-                className="w-5 h-5" 
-                fill="none" 
-                stroke="currentColor" 
+              <motion.svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
                 animate={{ x: [0, 5, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
@@ -463,7 +463,7 @@ const Hero: React.FC = () => {
           </motion.button>
 
           <motion.button
-            whileHover={{ 
+            whileHover={{
               scale: 1.1,
               boxShadow: "0 0 30px rgba(34, 211, 238, 0.6)",
               y: -5
@@ -479,10 +479,10 @@ const Hero: React.FC = () => {
             />
             <span className="relative flex items-center justify-center gap-2">
               Contact Me
-              <motion.svg 
-                className="w-5 h-5" 
-                fill="none" 
-                stroke="currentColor" 
+              <motion.svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
                 animate={{ y: [0, -3, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
@@ -493,7 +493,7 @@ const Hero: React.FC = () => {
           </motion.button>
 
           <motion.button
-            whileHover={{ 
+            whileHover={{
               scale: 1.1,
               boxShadow: "0 0 30px rgba(96, 165, 250, 0.6)",
               y: -5
@@ -520,7 +520,7 @@ const Hero: React.FC = () => {
           </motion.button>
 
           <motion.button
-            whileHover={{ 
+            whileHover={{
               scale: 1.1,
               boxShadow: "0 0 30px rgba(96, 165, 250, 0.5)",
               y: -5
