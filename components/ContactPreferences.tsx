@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { LinkedinIcon, EmailSvg, WhatsAppSvg } from '../constants';
 
 const ContactPreferences: React.FC = () => {
-  const emailAddress = 'your.email@example.com'; // TODO: Replace with your email address
+  const emailAddress = 'vivekparekh0409@gmail.com'; // User's email address
 
   const container = {
     hidden: { opacity: 0 },

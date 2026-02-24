@@ -3,10 +3,7 @@ import { motion } from 'framer-motion';
 
 const About: React.FC = () => {
   const paragraphs = [
-    "Passionate AI & Automation Developer focused on building intelligent, real-world solutions using AI, Python, and scalable automation workflows. I follow a hands-on learning approach—actively experimenting, building projects, and contributing on GitHub. My work emphasizes practical applications, transforming complex ideas into efficient, impactful systems. Always eager to collaborate, innovate, and grow while staying aligned with the evolving future of AI and automation.",
-    "I believe in a hands-on learning approach, constantly experimenting with new technologies and frameworks. My focus is always on practical applications, transforming complex ideas into functional and impactful solutions. From crafting AI models for various tasks to orchestrating seamless data flows, I enjoy every step of the development process.",
-    "I'm consistently an active learner and maintain a strong presence on GitHub, regularly committing to projects and exploring new challenges. This dedication ensures my skills remain cutting-edge and my portfolio reflects real-time development.",
-    "I'm always eager to collaborate on innovative projects, contribute to meaningful initiatives, and continuously expand my knowledge. If you're looking for guidance, collaboration, or just a chat about the future of AI and automation, feel free to connect!"
+    "🐍 Python-driven developer crafting intelligent automation & scalable systems that transform complex problems into elegant solutions. 💻 Active open-source contributor leveraging cutting-edge AI to build practical, innovative applications. 🤝 Passionate about collaboration, continuous learning, and turning visionary ideas into impactful technology."
   ];
 
   const containerVariants = {

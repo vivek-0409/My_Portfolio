@@ -171,6 +171,11 @@ export const socialLinks: SocialLink[] = [
     url: 'https://www.instagram.com/parekh_vivek__?igsh=MTV0ejZlNmVhdjV2aw==',
     icon: <InstagramIcon />,
   },
+  {
+    name: 'Email',
+    url: 'mailto:vivekparekh0409@gmail.com',
+    icon: <EmailIcon />,
+  },
 ];
 
 /**
