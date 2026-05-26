@@ -154,7 +154,7 @@ const ContactPreferences: React.FC = () => {
         />
 
         <Card
-          href="https://www.linkedin.com/in/vivek-parekh-03b3572b6/"
+          href="https://www.linkedin.com/in/vivek-parekh-03b3572b6/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2FQ3W5esNTBirj9z5n95qYA%3D%3D"
           icon={<LinkedinIcon />}
           title="Networking"
           desc="Connect to stay updated on my professional journey."
